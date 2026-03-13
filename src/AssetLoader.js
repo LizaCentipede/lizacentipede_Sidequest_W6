@@ -25,12 +25,7 @@ export async function loadAssets(levelPkg, tuningDoc) {
   const leafImg = await loadImageAsync("assets/leafSpriteSheet.png");
   const fireImg = await loadImageAsync("assets/fireSpriteSheet.png");
 
-  const groundTileImg = await loadImageAsync("assets/groundTile.png");
-  const groundTileDeepImg = await loadImageAsync("assets/groundTileDeep.png");
-  const platformLCImg = await loadImageAsync("assets/platformLC.png");
-  const platformRCImg = await loadImageAsync("assets/platformRC.png");
-  const wallLImg = await loadImageAsync("assets/wallL.png");
-  const wallRImg = await loadImageAsync("assets/wallR.png");
+  const tileImg = await loadImageAsync("assets/cave.png");
 
   const fontImg = await loadImageAsync("assets/bitmapFont.png");
 
@@ -61,12 +56,7 @@ export async function loadAssets(levelPkg, tuningDoc) {
     boarImg,
     leafImg,
     fireImg,
-    groundTileImg,
-    groundTileDeepImg,
-    platformLCImg,
-    platformRCImg,
-    wallLImg,
-    wallRImg,
+    tileImg,
     fontImg,
     backgrounds,
     playerAnis,
@@ -79,12 +69,7 @@ export async function loadAssets(levelPkg, tuningDoc) {
     leafImg,
     fireImg,
 
-    groundTileImg,
-    groundTileDeepImg,
-    platformLCImg,
-    platformRCImg,
-    wallLImg,
-    wallRImg,
+    tileImg,
 
     fontImg,
     backgrounds,
@@ -245,12 +230,7 @@ function validateAssets(bundle) {
     "boarImg",
     "leafImg",
     "fireImg",
-    "groundTileImg",
-    "groundTileDeepImg",
-    "platformLCImg",
-    "platformRCImg",
-    "wallLImg",
-    "wallRImg",
+    "tileImg",
     "fontImg",
   ];
 

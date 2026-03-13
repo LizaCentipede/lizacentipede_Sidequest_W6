@@ -74,7 +74,9 @@ export function buildTilesAndGroups(level) {
   // --- ground tile (g) ---
   level.ground = new Group();
   level.ground.physics = "static";
-  level.ground.img = level.assets.groundTileImg;
+  level.ground.spriteSheet = level.assets.tileImg;
+  level.ground.anis.w = 32;
+  level.ground.anis.h = 32;
   level.ground.w = tileW;
   level.ground.h = tileH;
   level.ground.tile = "g";
@@ -82,7 +84,9 @@ export function buildTilesAndGroups(level) {
   // --- deep ground tile (d) ---
   level.groundDeep = new Group();
   level.groundDeep.physics = "static";
-  level.groundDeep.img = level.assets.groundTileDeepImg;
+  level.groundDeep.spriteSheet = level.assets.tileImg;
+  level.groundDeep.anis.w = 32;
+  level.groundDeep.anis.h = 32;
   level.groundDeep.w = tileW;
   level.groundDeep.h = tileH;
   level.groundDeep.tile = "d";
@@ -90,7 +94,9 @@ export function buildTilesAndGroups(level) {
   // --- platform left cap (L) ---
   level.platformsL = new Group();
   level.platformsL.physics = "static";
-  level.platformsL.img = level.assets.platformLCImg;
+  level.platformsL.spriteSheet = level.assets.tileImg;
+  level.platformsL.anis.w = 32;
+  level.platformsL.anis.h = 32;
   level.platformsL.w = tileW;
   level.platformsL.h = tileH;
   level.platformsL.tile = "L";
@@ -98,7 +104,9 @@ export function buildTilesAndGroups(level) {
   // --- platform right cap (R) ---
   level.platformsR = new Group();
   level.platformsR.physics = "static";
-  level.platformsR.img = level.assets.platformRCImg;
+  level.platformsR.spriteSheet = level.assets.tileImg;
+  level.platformsR.anis.w = 32;
+  level.platformsR.anis.h = 32;
   level.platformsR.w = tileW;
   level.platformsR.h = tileH;
   level.platformsR.tile = "R";
@@ -106,7 +114,9 @@ export function buildTilesAndGroups(level) {
   // --- wall left ([) ---
   level.wallsL = new Group();
   level.wallsL.physics = "static";
-  level.wallsL.img = level.assets.wallLImg;
+  level.wallsL.spriteSheet = level.assets.tileImg;
+  level.wallsL.anis.w = 32;
+  level.wallsL.anis.h = 32;
   level.wallsL.w = tileW;
   level.wallsL.h = tileH;
   level.wallsL.tile = "[";
@@ -114,7 +124,9 @@ export function buildTilesAndGroups(level) {
   // --- wall right (]) ---
   level.wallsR = new Group();
   level.wallsR.physics = "static";
-  level.wallsR.img = level.assets.wallRImg;
+  level.wallsR.spriteSheet = level.assets.tileImg;
+  level.wallsR.anis.w = 32;
+  level.wallsR.anis.h = 32;
   level.wallsR.w = tileW;
   level.wallsR.h = tileH;
   level.wallsR.tile = "]";
@@ -124,6 +136,14 @@ export function buildTilesAndGroups(level) {
   // ---------------------------------------------------------------------------
 
   new Tiles(tilemap, 0, 0, tileW, tileH);
+
+  // Set frames for tileset
+  for (const s of level.ground) s.frame = 0;
+  for (const s of level.groundDeep) s.frame = 0;
+  for (const s of level.platformsL) s.frame = 0;
+  for (const s of level.platformsR) s.frame = 0;
+  for (const s of level.wallsL) s.frame = 0;
+  for (const s of level.wallsR) s.frame = 0;
 
   // ---------------------------------------------------------------------------
   // 4) Post-spawn adjustments
